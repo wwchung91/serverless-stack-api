@@ -1,0 +1,8 @@
+{
+  "body": "{\"content\":\"hello, there, cat, bat, jet\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "1"
+    }
+  }
+}

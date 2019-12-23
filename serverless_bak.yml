@@ -24,9 +24,7 @@ provider:
   # under process.env.
   # These environment variables are made available to our functions
   # under process.env.
-	
   environment:
-    tableName2: noAuthWordDic
     tableName: ${self:custom.tableName}
     stripeSecretKey: ${env:STRIPE_SECRET_KEY}
   # 'iamRoleStatements' defines the permission policy for the Lambda function.
@@ -45,7 +43,7 @@ provider:
       # the specific table for the stage
       Resource:
         - "Fn::GetAtt": [ NotesTable, Arn ]
-        - "Fn::GetAtt": [ noAuthWordDic, Arn ]
+
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
   # - path: url path is /notes
@@ -119,15 +117,6 @@ functions:
     events:
       - http:
           path: billing
-          method: post
-          cors: true
-          authorizer: aws_iam
-
-  noAuthCreate:
-    handler: noAuthCreate.main
-    events:
-      - http:
-          path: notes-1
           method: post
           cors: true
           authorizer: aws_iam
