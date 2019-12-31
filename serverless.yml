@@ -131,6 +131,18 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+
+
+  noAuthGet:
+    handler: noAuthGet.main
+    events:
+      - http:
+          path: /notes2/{id2}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
+
 # Create our resources with separate CloudFormation templates
 # Create our resources with separate CloudFormation templates
 # Create our resources with separate CloudFormation templates

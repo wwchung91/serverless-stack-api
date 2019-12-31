@@ -1,4 +1,3 @@
-import uuid from "uuid";
 import AWS from "aws-sdk";
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
@@ -18,8 +17,8 @@ export function main(event, context, callback) {
     // - 'attachment': parsed from request body
     // - 'createdAt': current Unix timestamp
     Item: {
-      wordGroupId: event.requestContext.identity.cognitoIdentityId,
-      wordId: uuid.v1(),
+      wordGroupId: data.wordGroupId,
+      wordId: data.wordId,
       content: data.content,
       createdAt: Date.now()
     }

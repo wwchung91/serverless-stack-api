@@ -1,8 +1,3 @@
 {
-  "body": "{\"content\":\"hello, there, cat, bat, jet\"}",
-  "requestContext": {
-    "identity": {
-      "cognitoIdentityId": "1"
-    }
-  }
+  "body": "{\"content\":\"hello, there, cat, bat, jet\", \"wordId\":\"123\", \"wordGroupId\":\"132\"}"
 }
