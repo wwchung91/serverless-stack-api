@@ -142,6 +142,42 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  noAuthList:
+    # Defines an HTTP API endpoint that calls the main function in list.js
+    # - path: url path is /notes
+    # - method: GET request
+    handler: noAuthList.main
+    events:
+      - http:
+          path: notes2
+          method: get
+          cors: true
+          authorizer: aws_iam
+
+
+  noAuthUpdate:
+    # Defines an HTTP API endpoint that calls the main function in update.js
+    # - path: url path is /notes2/{id2}
+    # - method: PUT request
+    handler: noAuthUpdate.main
+    events:
+      - http:
+          path: notes2/{id2}
+          method: put
+          cors: true
+          authorizer: aws_iam
+
+  noAuthDelete:
+    # Defines an HTTP API endpoint that calls the main function in delete.js
+    # - path: url path is /notes/{id}
+    # - method: DELETE request
+    handler: noAuthDelete.main
+    events:
+      - http:
+          path: notes2/{id2}
+          method: delete
+          cors: true
+          authorizer: aws_iam
 
 # Create our resources with separate CloudFormation templates
 # Create our resources with separate CloudFormation templates
